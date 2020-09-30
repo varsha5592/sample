@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+ class A
+ {
+    public:
+     int id,marks[5],sum=0,i;
+     float avg;
+       string name;
+       public:
+       void fun()
+       {
+           cout<<"enter student details";
+           cin>>id;
+           cin>>name;
+           for(i=0;i<5;i++)
+           {
+               cin>>marks[i];
+               sum+=marks[i];
+           }
+           avg=sum/5;
+       }
+   };
+   class B:protected A
+   {
+       public:
+       void disp()
+       {
+           cout<<"name is"<<name<<endl;
+           cout<<"id is"<<id<<endl;
+           cout<<"marks of student are";
+           for(i=0;i<5;i++)
+           {
+               cout<<marks[i];
+           }
+           cout<<"average marks of student is"<<avg;
+           
+       }
+   };
+   int main()
+   {
+       B obj;
+       obj.fun();
+       obj.disp();
+   }
